@@ -24,14 +24,19 @@ function App() {
     }
   }
 
+  const removeTrack = (track) => {
+    let filteredList = playlistTracks.filter((savedTrack) => savedTrack.id !== track.id)
+    setPlaylistTracks(filteredList)
+  }
+
   return (
     <div>
-  <h1>Ja<span className="highlight">mmm</span>ing</h1>
-  <div className="App">
-    <SearchBar />
-    <div className="App-playlist">
-      <SearchResults searchResults={searchResults} onAdd={addTrack}/>
-      <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
+      <h1>Ja<span className="highlight">mmm</span>ing</h1>
+      <div className="App">
+        <SearchBar />
+        <div className="App-playlist">
+          <SearchResults searchResults={searchResults} onAdd={addTrack}/>
+          <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack}/>
     </div>
   </div>
 </div>
