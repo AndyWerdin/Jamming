@@ -17,7 +17,7 @@ const Track = (props) => {
     const removeTrack = () => {
         props.onRemove(props.track)
     }
-    
+
     return (
         <div className="Track">
             <div className="Track-information">
