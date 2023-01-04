@@ -3,11 +3,15 @@ import './Track.css';
 
 const Track = (props) => {
     const renderAction = () => {
-        if (true) {
+        if (props.isRemove) {
             return <button className="Track-action">-</button>
         } else {
-            return <button className="Track-action">+</button>
+            return <button className="Track-action" onClick={addTrack}>+</button>
         }
+    }
+
+    const addTrack = () => {
+        props.onAdd(props.track)
     }
     
     return (

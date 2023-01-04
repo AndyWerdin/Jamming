@@ -16,13 +16,21 @@ function App() {
       {name: 'Waiting for Love', artist: 'Avicii', album: 'Stories', id: 2}
     ])
 
+  const addTrack = (track) => {
+    if (playlistTracks.find((savedTrack) => savedTrack.id === track.id)) {
+      return;
+    } else {
+      setPlaylistTracks([...playlistTracks, track]);
+    }
+  }
+
   return (
     <div>
   <h1>Ja<span className="highlight">mmm</span>ing</h1>
   <div className="App">
     <SearchBar />
     <div className="App-playlist">
-      <SearchResults searchResults={searchResults}/>
+      <SearchResults searchResults={searchResults} onAdd={addTrack}/>
       <Playlist playlistName={playlistName} playlistTracks={playlistTracks}/>
     </div>
   </div>
