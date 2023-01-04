@@ -7,7 +7,8 @@ import './App.css';
 function App() {
   const [searchResults, setSearchResults] = useState(
     [
-      {name: 'Rolling In the Deep', artist: 'Adele', album: '21'}
+      {name: 'Rolling In the Deep', artist: 'Adele', album: '21', id: 1},
+      {name: 'Waiting for Love', artist: 'Avicii', album: 'Stories', id: 2}
     ])
 
 
@@ -15,10 +16,10 @@ function App() {
     <div>
   <h1>Ja<span className="highlight">mmm</span>ing</h1>
   <div className="App">
-    {SearchBar}
+    <SearchBar />
     <div className="App-playlist">
       <SearchResults searchResults={searchResults}/>
-      {Playlist}
+      <Playlist />
     </div>
   </div>
 </div>

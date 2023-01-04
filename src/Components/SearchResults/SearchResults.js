@@ -2,7 +2,7 @@ import React from 'react';
 import TrackList from '../TrackList/TrackList';
 import './SearchResults.css';
 
-const SearchResults = () => {
+const SearchResults = (props) => {
     return (
         <div className="SearchResults">
             <h2>Results</h2>
