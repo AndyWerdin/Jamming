@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
+import Spotify from '../../util/Spotify';
 import './App.css';
 
 function App() {
@@ -35,10 +36,14 @@ function App() {
 
   const savePlaylist = () => {
     let trackURIs = playlistTracks.map((track) => track.uri);
+    Spotify.savePlaylist(playlistName, trackURIs);
+    setPlaylistName("New Playlist");
+    setPlaylistTracks([]);
   }
 
-  const search = (searchTerm) => {
-    console.log(searchTerm);
+  const search = async (searchTerm) => {
+    const spotyfiResults = await Spotify.search(searchTerm);
+    setSearchResults(spotyfiResults);
   }
 
   return (
