@@ -1,6 +1,6 @@
 let accessToken;
-const clientId = "84d388b02bfe41e7b53279556f2e26e4";
-const redirectUrl = "http://localhost:3000/";
+const clientId = "YOUR_USER_ID";
+const redirectUrl = "http://localhost:3000/"; //for local test
 
 const Spotify = {
     async savePlaylist(playlsitName, uris) {
